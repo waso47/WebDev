@@ -1,0 +1,116 @@
+<html>
+
+    <head>
+        <title>Question 3</title>
+
+        <style>
+            .animalWord {
+                font-size: 80px;
+            }
+        </style>
+
+        <script>
+            function dragStart(event)
+            {
+                //get draggable item id
+                var dragId = event.target.id;
+                console.log(dragId);
+
+                //store drag id in dataTransfer object
+                event.dataTransfer.setData("dragId", dragId);
+            }
+
+            var dogCount = 0;
+            var catCount = 0;
+
+            function drop(event)
+            {
+                event.preventDefault();
+
+                //get drop element id
+                var dropId = event.target.id;
+                console.log("dropId=" + dropId);
+
+                //get drag id form dataTransfer object
+                var dragId = event.dataTransfer.getData("dragId");
+                console.log("dragId=" + dragId);
+
+                //writing drop-drag logic
+                if( (dropId == "dogWord") && (dragId == "dogPic") )
+                {
+                    dogCount++;
+
+                    var html = getImageHtml("dog.png", dogCount);
+                    var dogSpan = document.getElementById("dogHolder");
+                    dogSpan.innerHTML = html;
+                }
+
+                if( (dropId == "catWord") && (dragId == "catPic") )
+                {
+                    catCount++;
+
+                    var html = getImageHtml("cat.png", catCount);
+                    var catSpan = document.getElementById("catHolder");
+                    catSpan.innerHTML = html;
+                }
+            }
+
+            function getImageHtml(imageSource, count)
+            {
+                var html = "";
+                for(var i=0; i<count; i++)
+                {
+                    html += "<img src='" + imageSource + "' height='100px' />";
+                }
+
+                return html;
+            }
+
+            function dragOver(event)
+            {
+                event.preventDefault();
+            }
+        </script>
+
+        <body>
+
+            Drag an animal and drop it on the corresponding text.
+            <br /><br />
+
+            <div>
+                <span class="animalWord"
+                        id="dogWord"
+                        onDrop="drop(event)"
+                        onDragOver="dragOver(event)" >
+                    DOG
+                </span>
+
+                <span id="dogHolder">
+                </span>
+            </div>
+
+            <div>
+                <span class="animalWord"
+                        id="catWord"
+                        onDrop="drop(event)"
+                        onDragOver="dragOver(event)">
+                    CAT
+                </span>
+
+                <span id="catHolder">
+                </span>
+            </div>
+
+            <br />
+
+            <img src="cat.png" height="100px" 
+                id="catPic"
+                draggable="true"
+                onDragStart="dragStart(event)" />
+
+            <img src="dog.png" height="100px"
+                id="dogPic"
+                draggable="true"
+                onDragStart="dragStart(event)" />
+        </body>
+    </head>

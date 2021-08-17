@@ -1,0 +1,64 @@
+<html>
+    <head>
+        <title>Question 4</title>
+
+        <script>
+            function  readJson()
+            {
+                // getting JSON from text area
+                var jsonText = document.getElementById("inputTf");
+                var subjectJson = jsonText.value;
+
+                // convert json to object
+                var subjectObj = JSON.parse(subjectJson);
+
+                // show subject code
+                var codeText = document.getElementById("codeOutput");
+                codeText.value = subjectObj.code;
+
+                // show subject title
+                var titleText = document.getElementById("titleOutput");
+                titleText.value = subjectObj.title;
+
+                // show subject cp
+                var cpText = document.getElementById("cpOutput");
+                cpText.value = subjectObj.cp;
+
+                // show subject core y/n
+                var coreCheck = document.getElementById("coreOutput");
+                coreCheck.checked = subjectObj.coreFlag;
+            }
+        </script>
+    </head>
+
+    <body>
+        <textarea rows="7" cols="50" id="inputTf">
+        </textarea>
+        <br />
+        
+        <button onClick="readJson();">
+            Read JSON
+        </button>
+        <br /><br />
+
+        Subject code:
+        <input type="text" id="codeOutput" />
+        <br />
+
+        Subject title:
+        <input type="text" id="titleOutput" />
+        <br />
+
+        Subject credit point:
+        <input type="text" id="cpOutput" />
+        <br />
+        
+        Core subject:
+        <input type="checkbox" id="coreOutput" />
+        <br />
+
+        
+
+        
+    </body>
+</html>

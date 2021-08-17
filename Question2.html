@@ -1,0 +1,122 @@
+<html>
+    <head>
+        <title>Question 2</title>
+
+        <script>
+
+            // do ajax query
+            function doAjaxQuery()
+            {
+                // make the XMLHttpRequest
+                var xhttp = new XMLHttpRequest();
+
+                // make handler for readyState
+                xhttp.onreadystatechange = function()
+                {
+                    readyStateChangeHandler(xhttp);
+                }
+
+                // making the query by async call
+                var queryLink = "airport.json";
+                xhttp.open("GET", queryLink, true);
+                xhttp.send();
+            }
+
+            // creating handler for the readyState change
+            function readyStateChangeHandler(xhttp)
+            {
+                if(xhttp.readyState == XMLHttpRequest.DONE)
+                {
+                    if(xhttp.status == 200)
+                    {
+                        // means status ok
+                        handleStatusSuccess(xhttp);
+                    }
+                    else
+                    {
+                        // status is not ok
+                        handleStatusFail(xhttp);
+                    }
+                }
+            }
+
+            // when XMLHttpRequest fails
+            function handleStatusFail(xhttp)
+            {
+                alert("AJAX request fail");
+                alert("readyState=" + xhttp.readyState);
+                alert("status=" + xhttp.status);
+            }
+
+            // when XMLHttpRequest succeeds
+            function handleStatusSuccess(xhttp)
+            {
+                // get the json
+                var jsonText = xhttp.responseText;
+                //alert jsontext
+
+                //parse json to object
+                var obj = JSON.parse(jsonText);
+
+                //display object
+                display(obj);
+            }
+
+            // display js object in webpage
+            function display(obj)
+            {
+                var displayDiv = document.getElementById("display");
+
+                // build html result
+                var html = "";
+                html += "<b>Search Query: </b>";
+                html += obj.searchQuery;
+                html += "<br /><br />";
+
+                html += "<table border='1'>";
+                html += "<tr>";
+                html += "<th>Airport</th>";
+                html += "<th>ICAO</th>";
+                html += "<th>IATA</th>";
+                html += "<th>Location</th>";
+                html += "</tr>";
+
+                // using for loop to go through each search result
+                for(var i=0; i<obj.searchResult.length; i++)
+                {
+                    var airportObj = obj.searchResult[i];
+
+                    html += "<tr>";
+                    html += "<td>";
+                    html += airportObj.airportName;
+                    html += "</td>";
+                    html += "<td>";
+                    html += airportObj.ICAO;
+                    html += "</td>";
+                    html += "<td>";
+                    html += airportObj.IATA;
+                    html += "</td>";
+                    html += "<td>";
+                    html += airportObj.city + ", " + airportObj.country;
+                    html += "</td>";
+                    html += "</tr>";
+                }
+
+                html += "</table>";
+
+                //show result in div
+                displayDiv.innerHTML = html;
+            }
+        </script>
+    </head>
+
+    <body>
+        <button onClick="doAjaxQuery();">
+            Search Airport
+        </button>
+        <br /><br />
+
+        <div id="display">
+        </div>
+    </body>
+</html>

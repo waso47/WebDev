@@ -1,0 +1,106 @@
+<html>
+
+    <head>
+        <title>Question 1</title>
+
+        <script>
+
+            // do ajax query
+            function doAjaxQuery()
+            {
+                // make the XMLHttpRequest
+                var xhttp = new XMLHttpRequest();
+
+                // make handler for readyState
+                xhttp.onreadystatechange = function()
+                {
+                    readyStateChangeHandler(xhttp);
+                }
+
+                // making the query by async call
+                var queryLink = "faculty.json";
+                xhttp.open("GET", queryLink, true);
+                xhttp.send();
+            }
+
+            // creating handler for the readyState change
+            function readyStateChangeHandler(xhttp)
+            {
+                if(xhttp.readyState == XMLHttpRequest.DONE)
+                {
+                    if(xhttp.status == 200)
+                    {
+                        // means status ok
+                        handleStatusSuccess(xhttp);
+                    }
+                    else
+                    {
+                        // status is not ok
+                        handleStatusFail(xhttp);
+                    }
+                }
+            }
+
+            // when XMLHttpRequest fails
+            function handleStatusFail(xhttp)
+            {
+                alert("AJAX request fail");
+                alert("readyState=" + xhttp.readyState);
+                alert("status=" + xhttp.status);
+            }
+
+            // when XMLHttpRequest succeeds
+            function handleStatusSuccess(xhttp)
+            {
+                // get the json
+                var jsonText = xhttp.responseText;
+                //alert jsontext
+
+                //parse json to object
+                var facultyObj = JSON.parse(jsonText);
+
+                //display object
+                display(facultyObj);
+            }
+
+            // display object in div element
+            function display(facultyObj)
+            {
+                // get displayDiv elemtn
+                var displayDiv = document.getElementById("display");
+
+                // build the resulting html
+                var html = "";
+
+                html += "<b>Name: </b>";
+                html += facultyObj.name;
+                html += "<br />";
+
+                html += "<b>Abbreviation: </b>";
+                html += facultyObj.abbreviation;
+                html += "<br />";
+
+                html += "<b>Email: </b>";
+                html += facultyObj.email;
+                html += "<br />";
+
+                html += "<b>Website: </b>";
+                html += facultyObj.web;
+
+                // display results in the div
+                displayDiv.innerHTML = html;
+            }
+        </script>
+    </head>
+
+    <body>
+
+        <button onClick="doAjaxQuery();">
+            Get Faculty Details
+        </button>
+        <br /><br />
+
+        <div id="display">
+        </div>
+    </body>
+</html>

@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <title>Question 4</title>
+        <h1>Jack Wason 6780957</h1>
+        <script>
+            function sum() {
+                var field1=document.getElementById("num1").value;
+                var field2=document.getElementById("num2").value;
+                var min = "0";
+                var max = "0";
+                //DO the calculation
+                var result=parseFloat(field1)+parseFloat(field2);
+                //For field1 greater than field2
+                if(field1 > field2)
+                {
+                    min = field2;
+                    max = field1;
+                }
+                //for field1 less than field2
+                if(field1 < field2)
+                {
+                    min = field1;
+                    max = field2;
+                }
+                //when field1 is equal to field2
+                if(field1 == field2)
+                {
+                    min = field1;
+                    max = min;
+                }
+                //Show result
+                if (!isNaN(result))
+                {
+                    document.getElementById("answer").innerHTML= "Min = " + min + ", Max = " + max + ", Sum =" + result;
+                }
+            }
+        </script>
+    </head>
+
+    <body>
+        <h>Question 4</h>
+        <br />
+        <br />
+        Enter the 1st number:
+        <input type="text" id="num1" />
+        <br />
+        <br />
+        Enter the 2nd number:
+        <input type="text" id="num2" />
+        <br />
+        <br />
+        <button onclick="sum()">
+            Calculate
+        </button>
+        <p id="answer"></p>
+    </body>
+</html>

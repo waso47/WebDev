@@ -1,0 +1,86 @@
+<html>
+    <head>
+        <title>Question 6</title>
+        <h1>Jack Wason 6780957</h1>
+        <script>
+            function execution() {
+                var command = document.getElementById("entCom").value;
+                var duck = "QUACK QUACK";
+                var rooster = "COCK-A-DOODLE-DO";
+                var invalid = "You have entered an invalid command"
+                var img = document.createElement("img");
+
+                if (command.includes("make duck noise")) {
+                    //clear the divs
+                    document.getElementById("exeCom").innerHTML = "";
+                    //display the duck noise
+                    document.getElementById("exeCom").style.color = "red"
+                    document.getElementById("exeCom").style.fontSize = "xx-large";
+                    document.getElementById("exeCom").innerHTML += duck;
+                }
+
+                else if (command.includes("make rooster noise")) {
+                    //clear the divs
+                    document.getElementById("exeCom").innerHTML = "";
+                    //display the rooster noise
+                    document.getElementById("exeCom").style.color = "green";
+                    document.getElementById("exeCom").style.fontSize = "300%";
+                    document.getElementById("exeCom").innerHTML += rooster
+                }
+
+                else if (command.includes("show duck image")) {
+                    //clear the divs
+                    document.getElementById("exeCom").innerHTML = "";
+                    //show the duck image
+                    img.src = "duck.jpg";
+                    document.getElementById("exeCom").appendChild(img);
+                }
+
+                else if (command.includes("show rooster image")) {
+                    //clear the divs
+                    document.getElementById("exeCom").innerHTML = "";
+                    //show the rooster image
+                    img.src = "rooster.png";
+                    document.getElementById("exeCom").appendChild(img);
+                }
+                
+                else if (command.includes("show frog face")) {
+                    //clear the divs
+                    document.getElementById("exeCom").innerHTML = "";
+                    //show the frog face
+                    document.getElementById("exeCom").innerHTML += "&#128056";
+                }
+                
+                else{
+                    //clear the divs
+                    document.getElementById("exeCom").innerHTML = "";
+                    //show invalid command error
+                    document.getElementById("exeCom").style.fontSize = "";
+                    document.getElementById("exeCom").style.color = "";
+                    document.getElementById("exeCom").innerHTML += invalid
+                }
+            }
+
+        </script>
+    </head>
+
+    <body>
+        <h>Question 6</h>
+
+        <br />
+
+        Enter Command:
+        <input type="text" id="entCom" />
+
+        <button onclick="execution()">
+            Execute Command
+        </button>
+
+        <br />
+        <br />
+
+        <div id="exeCom">
+
+        </div>
+    </body>
+</html>

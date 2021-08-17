@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <title>Question 3</title>
+        <h1>Jack Wason 6780957</h1>
+        <script>
+            var position = "1st-2nd";
+            function swapFields() {
+                //give variable temp the values of the left field
+                var temp = document.getElementById("left").value;
+                //give the left field the value of the right field
+                document.getElementById("left").value = document.getElementById("right").value;
+                //give the right field the value of the left field
+                document.getElementById("right").value = temp;
+            }
+        </script>
+    </head>
+
+    <body>
+        <h>Question 3</h>
+        <form onsubmit="return false;">
+            <table>
+                <tr>
+                    <td>
+                        <input type="text" name="left" value="" id="left" />
+                    </td>
+                    <td>
+                        <input type="text" name="right" value="" id="right" />
+                    </td>
+                    <tr>
+                        <td>
+                            <input type="submit" value="Swap Text" onclick="swapFields('left', 'right');" />
+                        </td>
+                        <td>
+                            <input type="reset" value="Clear Text"
+                        </td>
+                    </tr>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>

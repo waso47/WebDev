@@ -1,0 +1,80 @@
+<html>
+    <head>
+        <title>Question 5</title>
+        <h1>Jack Wason 6780957</h1>
+        <script>
+            function switch1() { //swapping the first and second images
+                var img1 = document.getElementById("1");
+                var img2 = document.getElementById("2");
+
+                var oldImg1 = img1.src;
+                var oldImg2 = img2.src;
+
+                img1.src = oldImg2;
+                img2.src = oldImg1;
+            }
+
+            function switch2() { //swapping the second and third images
+                var img2 = document.getElementById("2");
+                var img3 = document.getElementById("3");
+
+                var oldImg2 = img2.src;
+                var oldImg3 = img3.src;
+
+                img2.src = oldImg3;
+                img3.src = oldImg2;
+            }
+
+            function switch3() { //swapping the third and fourth images
+                var img3 = document.getElementById("3");
+                var img4 = document.getElementById("4");
+
+                var oldImg3 = img3.src;
+                var oldImg4 = img4.src;
+
+                img3.src = oldImg4;
+                img4.src = oldImg3;
+            }
+
+            function switch4() { //swapping the fourth and fifth images
+                var img4 = document.getElementById("4");
+                var img5 = document.getElementById("5");
+
+                var oldImg4 = img4.src;
+                var oldImg5 = img5.src;
+
+                img4.src = oldImg5;
+                img5.src = oldImg4;
+            }
+
+        </script>
+    </head>
+
+    <body>
+        <h>Question 5</h>
+
+        <br />
+        
+        <img id="1" src="cow.png" height=100 width=100 />
+        <button onclick="switch1()">
+            Switch
+        </button>
+
+        <img id="2" src="dog.jpg" height=100 width=100 />
+        <button onclick="switch2()">
+            Switch
+        </button>
+
+        <img id="3" src="mouse.png" height=100 width=100 />
+        <button onclick="switch3()">
+            Switch
+        </button>
+
+        <img id="4" src="pigg.png" height=100 width=100 />
+        <button onclick="switch4()">
+            Switch
+        </button>
+
+        <img id="5" src="tiger.png" height=100 width=100 />
+    </body>
+</html>

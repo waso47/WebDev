@@ -1,0 +1,70 @@
+<html>
+    <head>
+        <title>Question 2</title>
+        <h1>Jack Wason 6780957</h1>
+
+        <script>
+
+            var animationOn = false;
+            var imageAnimation;
+            var imageLabel = "blank";
+
+            function updateImage()
+            {
+                var imageSpan = document.getElementById("imageHolder");
+
+                document.getElementById("imgDiv").style.visibility = "visible";
+
+                if(imageLabel == "frog")
+                {
+                    imageSpan.src = "lion.jpg";
+                    imageLabel = "lion";
+                }
+                else
+                {
+                    imageSpan.src = "frog.jpg";
+                    imageLabel = "frog";
+                }
+
+            }
+
+            function startAnimation()
+            {
+                if(!animationOn)
+                {
+                    animationOn = true;
+                    imageAnimation = setInterval(updateImage, 500);
+                }
+            }
+
+            function stopAnimation()
+            {
+                if(animationOn)
+                {
+                    animationOn = false;
+
+                    clearInterval(imageAnimation);
+                }
+            }
+        </script>
+    </head>
+    
+    <body>
+
+        <button onClick="startAnimation();">
+            Start Animation
+        </button>
+
+        <button onClick="stopAnimation();">
+            Stop Animation
+        </button>
+
+        <br />
+        <br />
+
+        <div id="imgDiv" style="margin-top: 15px; visibility: hidden;">
+            <img border="0" id="imageHolder" height="300px" width="300px"/>
+        </div>
+        
+    </body>
+</html>

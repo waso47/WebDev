@@ -1,0 +1,104 @@
+<html>
+    <head>
+        <title>Question 3</title>
+        <h1>Jack Wason 6780957</h1>
+
+        <script>
+
+            //Declaring Variables
+            var images = ["frog.jpg", "phone.jpg", "Chair.png", "Table.png", "Car.jpg"]
+            var gameOn = false;
+            var totalScore = 0;
+            var altImgInt;
+            var currentImgIndx;
+
+
+            function startFrogGame()
+            {
+                totalScore = 0;
+                document.getElementById("scoringDiv").style.visibility = "visible";
+                document.getElementById("scoringLabel").innerHTML = "Your Score is " + totalScore;
+
+                //Set interval to display alternating images when start frog game is clicked
+                if(!gameOn)
+                {
+                    altImgInt = setInterval(dispAltImg, 500);
+                }
+                gameOn = true;
+            }
+
+            //Function to show the images
+            function dispAltImg()
+            {
+                currentImgIndx = Math.floor((Math.random() * 5) + 1) - 1;
+                document.getElementById("altImg").src = images[currentImgIndx];
+            }
+
+            //When stop animation is clicked
+            function clearTime()
+            {
+                //Clears the interval
+                clearInterval(altImgInt);
+            }
+
+            function updateScore()
+            {
+                //Update score when game starts
+                if(gameOn === true)
+                {
+                    //If frog is clicked increment totalScore by 1
+                    //If other image is clicked decrement totalScore by 1
+                    if(currentImgIndx === 0)
+                    {
+                        totalScore += 1;
+                    }
+
+                    else
+                    {
+                        totalScore -= 1;
+                    }
+
+                    //When totalScore = 5 update message to "Your Score is 5. Game Over - You win!" and clear interval
+                    if(totalScore === 5)
+                    {
+                        document.getElementById("scoringLabel").innerHTML = "Your Score is 5. Game Over - You win!";
+                        totalScore = 0;
+                        gameOn = false;
+                        clearTime();
+                    }
+
+                    else if(totalScore === -5)
+                    {
+                        document.getElementById("scoringLabel").innerHTML = "Your Score is -5. Game Over - You lose!";
+                        totalScore = 0;
+                        gameOn = false;
+                        clearTime();
+                    }
+
+                    else
+                    {
+                        //If totalScore is not 5 or -5 update score with the latest totalScore
+                        document.getElementById("scoringLabel").innerHTML = "Your Score is " + totalScore; 
+                    }
+                }
+            }
+
+        </script>
+
+    </head>
+    
+    <body>
+
+        <button onClick = "startFrogGame();">
+            Start Frog Game
+        </button>
+
+        <div id="scoringDiv" style="margin-top: 15px; visibility: hidden;">
+            <label id="scoringLabel">Your Score is 0</label>
+        </div>
+
+        <div style="margin-top: 15px;">
+            <img onClick="updateScore();" id="altImg" height="150px" />
+        </div>
+    </body>
+</html>

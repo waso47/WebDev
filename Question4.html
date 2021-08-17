@@ -1,0 +1,64 @@
+<html>
+    <head>
+        <title>Question 4</title>
+
+        <script>
+
+            //declaring all variables
+
+            var stuNum = 6780957;
+            var counter = 6780957;
+            var addCounter = 0;
+            var animationOn = false;
+            var countAnimation;
+
+            function updateCount()
+            {
+                // update the counter
+                counter += 1;
+                addCounter += 1;
+
+                // show counter value
+                var countSpan = document.getElementById("countHolder");
+                countSpan.innerHTML = stuNum + " + " + addCounter + " = " + counter;
+            }
+
+            function startCountAni()
+            {
+                //when animation is not running
+                if(!animationOn)
+                {
+                    animationOn = true;
+
+                    countAnimation = setInterval(updateCount, 1000);
+                }
+            }
+
+            function stopCountAni()
+            {
+                //wehn animation is running
+                if(animationOn)
+                {
+                    animationOn = false;
+
+                    clearInterval(countAnimation);
+                }
+            }
+        </script>
+    </head>
+
+    <body>
+
+        <button onClick="startCountAni();">
+            Start counter animation
+        </button>
+
+        <button onClick="stopCountAni();">
+            Stop counter animation
+        </button>
+
+        <span id="countHolder">
+        </span>
+
+    </body>
+</html>

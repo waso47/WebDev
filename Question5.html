@@ -1,0 +1,226 @@
+<html>
+    <head>
+        <title>Question 5</title>
+        <script>
+
+            function execution() {
+                
+                var command = document.getElementById("entCom").value;
+                var frog = document.getElementsByClassName("frog")[0];
+                var table = document.getElementsByClassName("table")[0];
+                var chair = document.getElementsByClassName("chair")[0];
+                var phone = document.getElementsByClassName("phone")[0];
+                var car = document.getElementsByClassName("car")[0];
+
+                if (command.includes("Change frog to table")) {
+                    
+                    // changing frog to table
+                    
+                    frog.src = "Table.png";
+
+                    //updating class to match
+                    frog.className = "table";
+                }
+
+                else if (command.includes("Change frog to chair")) {
+                    //changing frog to chair
+
+                    frog.src = "Chair.png";
+
+                    //updating class to match
+                    frog.className = "chair";
+                }
+
+                else if (command.includes("Change frog to phone")) {
+                    //changing frog to phone
+
+                    frog.src = "phone.jpg";
+
+                    //updating class to match
+                    frog.className = "phone";
+                }
+
+                else if (command.includes("Change frog to car")) {
+                    //changing frog to car
+
+                    frog.src = "Car.jpg";
+
+                    //updating class to match
+                    frog.className = "car";
+                }
+
+                else if (command.includes("Change table to frog")) {
+                    //changing table to frog
+
+                    table.src = "frog.jpg";
+
+                    //updating class to match
+                    table.className = "frog";
+                }
+
+                else if (command.includes("Change table to chair")) {
+                    //changing table to chair
+
+                    table.src = "Chair.png";
+
+                    //updating class to match
+                    table.className = "chair";
+                }
+
+                else if (command.includes("Change table to phone")) {
+                    //changing table to phone
+
+                    table.src = "phone.jpg";
+
+                    //updating class to match
+                    table.className = "phone";
+                }
+
+                else if (command.includes("Change table to car")) {
+                    //changing table to car
+
+                    table.src = "Car.jpg";
+
+                    //updating class to match
+                    table.className = "car";
+                }
+
+                else if (command.includes("Change chair to frog")) {
+                    //changing chair to frog
+
+                    chair.src = "frog.jpg";
+
+                    //updating class to match
+                    chair.className = "frog";
+                }
+
+                else if (command.includes("Change chair to table")) {
+                    //changing chair to table
+
+                    chair.src = "Table.png";
+
+                    //updating class to match
+                    chair.className = "table";
+                }
+
+                else if (command.includes("Change chair to phone")) {
+                    //changing chair to phone
+
+                    chair.src = "phone.jpg";
+
+                    //updating class to match
+                    chair.className = "phone";
+                }
+
+                else if (command.includes("Change chair to car")) {
+                    //changing chair to car
+
+                    chair.src = "car.jpg";
+                    
+                    //updating class to match
+                    chair.className = "car";
+                }
+
+                else if (command.includes("Change phone to frog")) {
+                    //changing phone to frog
+
+                    phone.src = "frog.jpg";
+
+                    //updating class to match
+                    phone.className = "frog";
+                }
+
+                else if (command.includes("Change phone to table")) {
+                    //changing phone to table
+
+                    phone.src = "Table.png";
+
+                    //updating class to match
+                    phone.className = "table";
+                }
+
+                else if (command.includes("Change phone to chair")) {
+                    //changing phone to chair
+
+                    phone.src = "Chair.png";
+
+                    //updating class to match
+                    phone.className = "chair";
+                }
+
+                else if (command.includes("Change phone to car")) {
+                    //changing phone to car
+
+                    phone.src = "Car.jpg";
+
+                    //updating class to match
+                    phone.className = "car";
+                }
+
+                else if (command.includes("Change car to frog")) {
+                    //changing car to frog
+
+                    car.src = "frog.jpg";
+
+                    //updating class to match
+                    car.className = "frog";
+                }
+
+                else if (command.includes("Change car to table")) {
+                    //changing car to table
+
+                    car.src = "Table.png";
+
+                    //updating class to match
+                    car.className = "table";
+                }
+
+                else if (command.includes("Change car to chair")) {
+                    //changing car to chair
+
+                    car.src = "Chair.png";
+
+                    //updating class to match
+                    car.className = "chair";
+                }
+
+                else if (command.includes("Change car to phone")) {
+                    //changing car to phone
+
+                    car.src = "phone.jpg";
+
+                    //updating class to match
+                    car.className = "phone";
+                }
+
+                else{
+                    /// Pop up alert when command is invalid
+                    alert("You have entered an invalid command")
+                }
+            }
+
+        </script>
+    </head>
+
+    <body>
+        Enter Command:
+        <input type="text" id="entCom" />
+
+        <button onclick="execution();">
+            Execute Command
+        </button>
+
+        <br />
+        <br />
+
+        <img class="frog" src="frog.jpg" height=100 width=100 />
+
+        <img class="table" src="Table.png" height=100 width=100 />
+
+        <img class="chair" src="Chair.png" height=100 width=100 />
+
+        <img class="phone" src="phone.jpg" height=100 width=100 />
+
+        <img class="car" src="Car.jpg" height=100 width=100 />
+    </body>
+</html>

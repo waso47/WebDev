@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title>Exercise3</title>
+
+        <script>
+
+            var counter = 0;
+
+            function upCount()
+            {
+                //update counter value
+                counter = counter + 1;
+
+                //Display the counter
+                var countSpan = document.getElementById("countHolder");
+                countSpan.innerHTML = counter
+            }
+        </script>
+    </head>
+
+    <body>
+        <button onclick="upCount();">
+            Increase Counter
+        </button>
+
+        <br />
+        <br />
+
+        <span id="countHolder">0</span>
+
+    </body>
+</html>

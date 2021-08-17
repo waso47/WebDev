@@ -1,0 +1,61 @@
+[
+    {
+        "time": "08:54",
+        "name": "Wollongong Station",
+        "platform": 2
+    },
+
+    {
+        "time": "08:56",
+        "name": "Coniston Station",
+        "platform": 2
+    },
+    
+    {
+        "time": "09:01",
+        "name": "Unanderra Station",
+        "platform": 1
+    },
+
+    {
+        "time": "09:07",
+        "name": "Dapto Station",
+        "platform": 2
+    },
+
+    {
+        "time": "09:15",
+        "name": "Albion Park Station",
+        "platform": 2
+    },
+
+    {
+        "time": "09:21",
+        "name": "Oak Flats Station",
+        "platform": 1
+    },
+
+    {
+        "time": "09:25",
+        "name": "Shellharbour Junction",
+        "platform": 2
+    },
+
+    {
+        "time": "09:29",
+        "name": "Minnamurra Station",
+        "platform": 1
+    },
+
+    {
+        "time": "09:34",
+        "name": "Bombo Station",
+        "platform": 1
+    },
+
+    {
+        "time": "09:38",
+        "name": "Kiama Station",
+        "platform": 2
+    }
+]

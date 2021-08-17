@@ -1,0 +1,63 @@
+<?xml version="1.0" ?>
+<?xml-stylesheet type="text/xsl" href="question1.xsl"?>
+<stationDetails>
+    <station>
+        <time>08:54</time>
+        <name>Wollongong Station</name>
+        <platform>2</platform>
+    </station>
+
+    <station>
+        <time>08:56</time>
+        <name>Coniston Station</name>
+        <platform>2</platform>
+    </station>
+
+    <station>
+        <time>09:01</time>
+        <name>Unanderra Station</name>
+        <platform>1</platform>
+    </station>
+
+    <station>
+        <time>09:07</time>
+        <name>Dapto Station</name>
+        <platform>2</platform>
+    </station>
+
+    <station>
+        <time>09:15</time>
+        <name>Albion Park Station</name>
+        <platform>2</platform>
+    </station>
+
+    <station>
+        <time>09:21</time>
+        <name>Oak Flats Station</name>
+        <platform>1</platform>
+    </station>
+
+    <station>
+        <time>09:25</time>
+        <name>Shellharbour Junction</name>
+        <platform>2</platform>
+    </station>
+
+    <station>
+        <time>09:29</time>
+        <name>Minnamurra Station</name>
+        <platform>1</platform>
+    </station>
+
+    <station>
+        <time>09:34</time>
+        <name>Bombo Station</name>
+        <platform>1</platform>
+    </station>
+
+    <station>
+        <time>09:38</time>
+        <name>Kiama Station</name>
+        <platform>2</platform>
+    </station>
+</stationDetails>

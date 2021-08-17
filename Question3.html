@@ -1,0 +1,105 @@
+<html>
+    <head>
+        <title>Question 3</title>
+        <h1>Jack Wason 6780957</h1>
+
+        <script>
+            function getJSON()
+            {
+                // getting full name
+                var fullNameText = document.getElementById("fullName");
+                var fullName = fullNameText.value;
+
+                // getting student number
+                var studentNumText = document.getElementById("sNum");
+                var studentNum = studentNumText.value;
+
+                // getting subject code
+                var subCodeText = document.getElementById("sCode");
+                var subCode = subCodeText.value;
+
+                // getting subject title
+                var subTitleText = document.getElementById("sTitle");
+                var subTitle = subTitleText.value;
+
+                // getting plagiarism declaration
+                var plaDecText = document.getElementById("plaDec");
+                var plaDec = plaDecText.value;
+
+                // building the plagiarism declaration object
+                var plaDecObj = {};
+                plaDecObj.fullName = fullName;
+                plaDecObj.studentNum = studentNum;
+                plaDecObj.code = subCode;
+                plaDecObj.title = subTitle;
+                plaDecObj.dec = plaDec;
+
+                // convert object to JSON
+                var plaDecJson = JSON.stringify(plaDecObj, null, 4)
+
+                // Print JSON to textarea
+                var displayTextArea = document.getElementById("Stringified");
+                displayTextArea.value = plaDecJson;
+            }
+        </script>
+    </head>
+
+    <body>
+
+        <table>
+            <tr>
+                <td style="text-align: right;">
+                    Enter full name:
+                </td>
+                <td>
+                    <input style="width: 85%;" type="text" id="fullName" />
+                </td>
+            </tr>
+
+            <tr>
+                <td style="text-align: right;">
+                    Enter student number:
+                </td>
+                <td>
+                    <input style="width: 85%;" type="text" id="sNum" />
+                </td>
+            </tr>
+
+            <tr>
+                <td style="text-align: right;">
+                    Enter subject code:
+                </td>
+                <td>
+                    <input style="width: 85%;" type="text" id="sCode" />
+                </td>
+            </tr>
+
+            <tr>
+                <td style="text-align: right;">
+                    Enter subject title:
+                </td>
+                <td>
+                    <input style="width: 85%;" type="text" id="sTitle" />
+                </td>
+            </tr>
+
+            <tr>
+                <td style="text-align: right; vertical-align: center;">
+                    Enter plagiarism declaration:
+                </td>
+                <td>
+                    <textarea name="plaDec" id="plaDec" rows="4" cols="60" ></textarea>
+                </td>
+            </tr>
+
+            <tr>
+                <td style="text-align: right; vertical-align: center;">
+                    <button id="stringifyButton" onClick="getJSON()">JSON stringify</button>
+                </td>
+                <td>
+                    <textarea name="Stringified" id="Stringified" rows="9" cols="60"></textarea>
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>

@@ -1,0 +1,56 @@
+<html>
+    <head>
+        <title>Exercise4</title>
+
+        <script>
+
+            var counter = 0;
+            var animationOn = false;
+            var countAnimation;
+
+            function updateCount()
+            {
+                //update the counters value
+                counter = counter + 1;
+
+                //show the counters value
+                var countSpan = document.getElementById("countHolder");
+                countSpan.innerHTML = counter;
+            }
+
+            function startCountAni()
+            {
+                if(!animationOn)
+                {
+                    animationOn = true;
+
+                    countAnimation = setInterval(updateCount, 1000);
+                }
+            }
+
+            function stopCountAni()
+            {
+                if(animationOn)
+                {
+                    animationOn = false;
+
+                    clearInterval(countAnimation);
+                }
+            }
+
+        </script>
+    </head>
+
+    <body>
+
+        <button onclick="startCountAni();">
+            Start counter animation
+        </button>
+
+        <button onclick="stopCountAni();">
+            Stop counter animation
+        </button>
+
+        <span id="countHolder">0</span>
+    </body>
+</html>

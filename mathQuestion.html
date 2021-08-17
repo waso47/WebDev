@@ -1,0 +1,80 @@
+<html>
+    <head>
+        <title>Exersice2</title>
+
+        <script>
+            function checkAns()
+            {
+                //Get number 1
+                var inputField1 = document.getElementById("input1");
+                var num1 = Number(inputField1.value);
+
+                //Get number 2
+                var inputField2 = document.getElementById("input2");
+                var num2 = Number(inputField2.value);
+
+                //Get the operation
+                var opSelect = document.getElementById("opSelect");
+                var op = opSelect.value;
+
+                //Calculate the correct answer
+                var correctAns;
+
+                if(op == "add")
+                {
+                    correctAns = num1 + num2;
+                }
+
+                else if(op == "subtract")
+                {
+                    correctAns = num1 - num2;
+                }
+
+                else if(op =="multiply")
+                {
+                    correctAns = num1 * num2;
+                }
+
+                //Get user's answer
+                var ansField = document.getElementById("input3");
+                var userAns = Number(ansField.value);
+
+                //Check if answer is correct or incorrect
+                var checkMessageSpan = document.getElementById("checkMessage");
+
+                if(userAns == correctAns)
+                {
+                    checkMessageSpan.innerHTML = "Correct!"
+                }
+
+                else
+                {
+                    checkMessageSpan.innerHTML = "Incorrect, please try again"
+                }
+            }
+        </script>
+    </head>
+
+    <body>
+
+        <input type="text" size="5"  id="input1" />
+
+        <select id="opSelect">
+            <option value="add"> + </option>
+            <option value="subtract"> - </option>
+            <option value="multiply"> x </option>
+        </select>
+
+        <input type="text" size="5" id="input2" />
+
+        =
+
+        <input type="text" size="5" id="input3" />
+
+        <button onclick="checkAns();">
+            Check
+        </button>
+
+        <span id="checkMessage"></span>
+    </body>
+</html>

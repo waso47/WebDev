@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title>Q4</title>
+
+        <script>
+            function roar()
+            {
+                var lionSpan = document.getElementById("lionHolder");
+
+                lionSpan.innerHTML = "Roar";
+
+                var frogSpan = document.getElementById("frogHolder");
+
+                frogSpan.innerHTML = "";
+            }
+
+            function ribbit()
+            {
+                var frogSpan = document.getElementById("frogHolder");
+
+                frogSpan.innerHTML = "Ribbit";
+
+                var lionSpan = document.getElementById("lionHolder");
+
+                lionSpan.innerHTML = "";
+            }
+        </script>
+    </head>
+    <body>
+        <img src="lion.jpg" height="150px" onClick="roar();" />
+        <img src="frog.jpg" height="150px" onClick="ribbit();" />
+
+        <br /><br />
+
+        <span id="lionHolder" style="color: orange;"></span>
+        <span id="frogHolder" style="color: green;"></span>
+    </body>
+</html>

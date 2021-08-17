@@ -1,0 +1,89 @@
+<html>
+
+    <head>
+        <title>Question 2</title>
+
+        <script>
+            //return true when local storage is allowed, otherwise return false
+            function storageSupported()
+            {
+                if(typeof(Storage) !== "undefined")
+                {
+                    //local storage is supported
+                    return true;
+                }
+                else
+                {
+                    // local storage is not supported
+                    return false;
+                }
+            }
+
+            function jsonValidator()
+            {
+                // get the json text from textarea
+                var jsonTextarea = document.getElementById("jsonTextarea");
+                var jsonWords = jsonTextarea.value;
+
+                // saving user input into local storage
+                if(storageSupported())
+                {
+                    localStorage.setItem("userInput", jsonWords);
+                }
+
+                //getting message span
+                var messageSpan = document.getElementById("messageDisplay");
+
+                //parse JSON text
+                try
+                {
+                    JSON.parse(jsonWords);
+
+                    messageSpan.innerHTML = "<span style='color:green;'>JSON is valid</span>";
+                }
+                catch(ex)
+                {
+                    var message = "Error: " + ex.message;
+
+                    messageSpan.innerHTML = 
+                        "<span style='color:red;'>" 
+                        + message 
+                        + "</span>";
+                }
+            }
+
+            function initApp()
+            {
+                if(storageSupported())
+                {
+                    // get previuse user input from local storage
+                    var jsonWords = localStorage.getItem("userInput");
+
+                    // disp previous user input in textarea
+                    if(jsonWords != null)
+                    {
+                        var jsonTextarea = document.getElementById("jsonTextarea");
+                        jsonTextarea.value = jsonWords;
+                    }
+                }
+            }
+        </script>
+    </head>
+
+    <body onLoad="initApp()">
+
+        Enter JSON to validate:
+        <br />
+
+        <textarea id="jsonTextarea" rows="10" cols="50"></textarea>
+        <br />
+
+        <button onClick="jsonValidator()">
+            Validate JSON
+        </button>
+
+        <span id="messageDisplay">
+        </span>
+
+    </body>
+</html>

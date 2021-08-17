@@ -1,0 +1,14 @@
+The action of the form is:
+https://www.ebay.com.au/sch/i.html\
+
+Parameter for the keyword is _nkw
+
+Parameter for category is _sacat
+
+Value for categories:
+All categories = 0
+Coins = 11116
+Art = 550
+Book & Magazine = 267
+Music = 11233
+Stamps = 260
